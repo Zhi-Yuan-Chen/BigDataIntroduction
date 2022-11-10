@@ -1,0 +1,10 @@
+Sub 数据预处理
+Dim arr, brr, j&, i&
+arr = Range("Y14:Z42"): brr = Range("B2:B44562")
+For j = 1 To UBound(brr)
+For i = 1 To UBound(arr)
+brr(j, 1) = Replace(brr(j, 1), arr(i, 1), arr(i, 2))
+Next i
+Next j
+Range("B2:B44562").Value = brr
+End Sub
